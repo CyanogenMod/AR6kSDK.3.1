@@ -43,7 +43,7 @@ endif
 
 ifndef ATH_LINUXPATH
 #check for Nvidia-base platform
-ifeq ($(TARGET_PRODUCT),$(filter $(TARGET_PRODUCT),betelgeuse))
+ifeq ($(TARGET_PRODUCT),$(filter $(TARGET_PRODUCT),cm_betelgeuse))
 export ATH_LINUXPATH=$(ATH_ANDROID_ROOT)/$(TARGET_OUT_INTERMEDIATES)/kernel
 ATH_CROSS_COMPILE_TYPE:=$(CROSS_COMPILE)
 endif
