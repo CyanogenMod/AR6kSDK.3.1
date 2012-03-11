@@ -84,6 +84,13 @@ export  ATH_HTC_RAW_INT_ENV=yes
 export  ATH_AR6K_OTA_TEST_MODE=no
 export  ATH_BUILD_P2P=yes
 
+export  ATH_BUILD_3RDPARTY=yes
+export  ATH_AR6K_HCI_PAL=yes
+export  ATH_AR6K_BUILTIN_HCI_PAL=yes
+export  ATH_AR6K_DEBUG_ALLOC=no
+export  ATH_AR6K_HCI_BRIDGE=yes
+export  ATH_AR6K_BUILTIN_HCI_TRANSPORT=yes
+
 ATH_HIF_TYPE:=sdio
 
 ifneq ($(PLATFORM_VERSION),$(filter $(PLATFORM_VERSION),1.5 1.6))
