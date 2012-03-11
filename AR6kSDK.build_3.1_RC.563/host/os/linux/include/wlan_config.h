@@ -72,7 +72,7 @@
  * 1 - Enable
  * 0 - Disable (Default)
  */
-#define WLAN_CONFIG_BT_SHARING          0
+#define WLAN_CONFIG_BT_SHARING          1
 
 /*
  * This configuration item sets WIFI OFF policy
