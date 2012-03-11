@@ -45,7 +45,7 @@ ifndef ATH_LINUXPATH
 #check for Nvidia-base platform
 ifeq ($(TARGET_PRODUCT),$(filter $(TARGET_PRODUCT),cm_betelgeuse))
 export ATH_LINUXPATH=$(ATH_ANDROID_ROOT)/$(TARGET_OUT_INTERMEDIATES)/kernel
-ATH_CROSS_COMPILE_TYPE:=$(CROSS_COMPILE)
+ATH_CROSS_COMPILE_TYPE:=$(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
 endif
 endif
 
