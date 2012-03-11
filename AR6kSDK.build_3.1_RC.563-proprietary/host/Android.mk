@@ -42,25 +42,14 @@ define add-ar6k-prebuilt-file
 endef
 
 # HW2.0 firmware
-ALL_PREBUILT += $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.0/athwlan.bin.z77
-$(TARGET_OUT)/wifi/ath6k/AR6003/hw2.0/athwlan.bin.z77 : $(LOCAL_PATH)/../target/AR6003/hw2.0/bin/athwlan.bin.z77 | $(ACP)
-	$(transform-prebuilt-to-target)
-
-ALL_PREBUILT += $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.0/data.patch.hw2_0.bin
-$(TARGET_OUT)/wifi/ath6k/AR6003/hw2.0/data.patch.hw2_0.bin : $(LOCAL_PATH)/../target/AR6003/hw2.0/bin/data.patch.hw2_0.bin | $(ACP)
-	$(transform-prebuilt-to-target)
-
-ALL_PREBUILT += $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.0/otp.bin.z77
-$(TARGET_OUT)/wifi/ath6k/AR6003/hw2.0/otp.bin.z77 : $(LOCAL_PATH)/../target/AR6003/hw2.0/bin/otp.bin.z77 | $(ACP)
-	$(transform-prebuilt-to-target)
-
-ALL_PREBUILT += $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.0/bdata.SD31.bin
-$(TARGET_OUT)/wifi/ath6k/AR6003/hw2.0/bdata.SD31.bin : $(LOCAL_PATH)/support/fakeBoardData_AR6003_v2_0.bin | $(ACP)
-	$(transform-prebuilt-to-target)
-
-ALL_PREBUILT += $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.0/athtcmd_ram.bin
-$(TARGET_OUT)/wifi/ath6k/AR6003/hw2.0/athtcmd_ram.bin : $(LOCAL_PATH)/../target/AR6003/hw2.0/bin/athtcmd_ram.bin | $(ACP)
-	$(transform-prebuilt-to-target)
+ar6k_hw20_src_dir := ../target/AR6003/hw2.0/bin
+ar6k_hw20_dst_dir := $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.0
+$(call add-ar6k-prebuilt-file,$(ar6k_hw20_src_dir)/athwlan.bin.z77,$(ar6k_hw20_dst_dir),athwlan.bin.z77,athwlan20)
+$(call add-ar6k-prebuilt-file,$(ar6k_hw20_src_dir)/data.patch.hw2_0.bin,$(ar6k_hw20_dst_dir),data.patch.hw2_0.bin,athpatch20)
+$(call add-ar6k-prebuilt-file,$(ar6k_hw20_src_dir)/otp.bin.z77,$(ar6k_hw20_dst_dir),otp.bin.z77,athotp20)
+$(call add-ar6k-prebuilt-file,support/fakeBoardData_AR6003_v2_0.bin,$(ar6k_hw20_dst_dir),bdata.SD31.bin,athdata20)
+$(call add-ar6k-prebuilt-file,support/fakeBoardData_AR6003_v2_0.bin,$(ar6k_hw20_dst_dir),bdata.SD31.bin,athdataNULL20)
+$(call add-ar6k-prebuilt-file,$(ar6k_hw20_src_dir)/athtcmd_ram.bin,$(ar6k_hw20_dst_dir),athtcmd_ram.bin,athtcmd20)
 
 # HW2.1.1 firmware
 ar6k_hw21_src_dir := ../target/AR6003/hw2.1.1/bin
