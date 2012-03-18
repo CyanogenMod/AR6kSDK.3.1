@@ -95,7 +95,7 @@
  * 2 - WoW
  * 3 - CUT_POWER if BT OFF (clock sharing designs only)
  */
-#define WLAN_CONFIG_PM_SUSPEND              2
+#define WLAN_CONFIG_PM_SUSPEND              1
 
 /*
  * This configuration item sets suspend policy to use if PM_SUSPEND is
