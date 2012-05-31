@@ -9,8 +9,16 @@
 #       ATH_CROSS_COMPILE_TYPE := < cross compiler path >
 #       ATH_LINUXPATH := < kernel source path >
 
-ATH_BSP_TYPE=< android product name >
-ATH_ANDROID_ROOT=< android sdk full path >
+ATH_BSP_TYPE=betelgeuse
+ATH_ANDROID_ROOT=~/bin/cyanogen
+
+# Kernel path
+# Check for Nvidia-base platform
+ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),harmony ventana betelgeuse))
+ATH_ARCH_CPU_TYPE := arm
+ATH_LINUXPATH := $(ATH_ANDROID_ROOT)/out/target/product/$(ATH_BSP_TYPE)/obj/KERNEL_OBJ
+ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
+endif
 
   # Kernel path
 ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),qsd8250_surf qsd8250_ffa msm7627_surf msm7627_ffa msm7627a msm7625_ffa msm7625_surf msm7630_surf))
@@ -67,9 +75,12 @@ endif
   ATH_BUS_TYPE := SDIO
   ATH_OS_SUB_TYPE := linux_2_6
   ATH_BUS_SUBTYPE := linux_sdio
-  ATH_BUILD_3RDPARTY := no
+  ATH_BUILD_3RDPARTY := yes
   ATH_CFG80211_ENV := no
   ATH_BUILD_SYSTEM_TOOLS := no
-  ATH_AR6K_HCI_PAL := no
+  ATH_AR6K_HCI_PAL := yes
+  ATH_AR6K_BUILTIN_HCI_PAL := yes
   ATH_AR6K_DEBUG_ALLOC := no
   ATH_BUILD_P2P := yes
+  ATH_AR6K_HCI_BRIDGE := yes
+  ATH_AR6K_BUILTIN_HCI_TRANSPORT := yes
