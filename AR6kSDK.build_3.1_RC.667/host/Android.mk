@@ -111,7 +111,12 @@ $(mod_file) : $(mod_cleanup) $(TARGET_PREBUILT_KERNEL) $(ACP)
 	$(MAKE) ARCH=arm CROSS_COMPILE=$(ATH_CROSS_COMPILE_TYPE) -C $(ATH_LINUXPATH) ATH_HIF_TYPE=$(ATH_HIF_TYPE) PLAT_WOW_GPIO_PIN=$(board_wow_gpio) SUBDIRS=$(ATH_SRC_BASE)/os/linux modules
 	$(ACP) $(ATH_TARGET_OUTPUT)/$(ATH_ANDROID_SRC_BASE)/host/os/linux/ar6000.ko $(TARGET_OUT)/wifi/
 
-ALL_PREBUILT += $(mod_file)
+LOCAL_MODULE := ar6000.ko
+LOCAL_MODULE_TAGS := debug eng optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/wifi
+LOCAL_SRC_FILES := $(ar6000_module_file)
+include $(BUILD_PREBUILT)
 
 include $(LOCAL_PATH)/tools/Android.mk
 
