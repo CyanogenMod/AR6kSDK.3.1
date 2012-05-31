@@ -91,6 +91,13 @@ export  ATH_AR6K_HCI_PAL
 export  ATH_AR6K_DEBUG_ALLOC
 export  ATH_BUILD_P2P
 
+export  ATH_BUILD_3RDPARTY=yes
+export  ATH_AR6K_HCI_PAL=yes
+export  ATH_AR6K_BUILTIN_HCI_PAL=yes
+export  ATH_AR6K_DEBUG_ALLOC=no
+export  ATH_AR6K_HCI_BRIDGE=yes
+export  ATH_AR6K_BUILTIN_HCI_TRANSPORT=yes
+
 ATH_SRC_BASE :=$(shell pwd)
 MAKE :=make
 CC :=$(ATH_CROSS_COMPILE_TYPE)gcc
