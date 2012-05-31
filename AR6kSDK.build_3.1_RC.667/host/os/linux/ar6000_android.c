@@ -25,6 +25,7 @@
 #include "htc.h"
 #include <linux/vmalloc.h>
 #include <linux/fs.h>
+#include <linux/hardirq.h>
 
 #ifdef CONFIG_HAS_WAKELOCK
 #include <linux/wakelock.h>
