@@ -49,7 +49,6 @@ ifeq ($(TARGET_PRODUCT),$(filter $(TARGET_PRODUCT),qsd8250_surf qsd8250_ffa msm7
 export  ATH_LINUXPATH=$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ
 ATH_CROSS_COMPILE_TYPE:=$(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.3.1/bin/arm-eabi-
 endif
-export ATH_LINUXPATH := $(ATH_ANDROID_ROOT)/kernel_imx
 
 ifndef ATH_LINUXPATH
 #check for Nvidia-base platform
@@ -120,12 +119,15 @@ $(mod_file) : $(mod_cleanup) $(TARGET_PREBUILT_KERNEL) $(ACP)
 	$(MAKE) ARCH=arm CROSS_COMPILE=$(ATH_CROSS_COMPILE_TYPE) -C $(ATH_LINUXPATH) ATH_HIF_TYPE=$(ATH_HIF_TYPE) PLAT_WOW_GPIO_PIN=$(board_wow_gpio) SUBDIRS=$(ATH_SRC_BASE)/os/linux modules
 	$(ACP) $(ATH_TARGET_OUTPUT)/$(ATH_ANDROID_SRC_BASE)/host/os/linux/ar6000.ko $(TARGET_OUT)/wifi/
 
-LOCAL_MODULE := ar6000.ko
-LOCAL_MODULE_TAGS := debug eng optional
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT)/wifi
-LOCAL_SRC_FILES := $(ar6000_module_file)
-include $(BUILD_PREBUILT)
+#LOCAL_MODULE := ar6000.ko
+#LOCAL_MODULE_TAGS := debug eng optional
+#LOCAL_MODULE_CLASS := ETC
+#LOCAL_MODULE_PATH := $(TARGET_OUT)/wifi
+#LOCAL_SRC_FILES := $(ar6000_module_file)
+
+TARGET_KERNEL_MODULES := $(mod_file)
+
+#include $(BUILD_PREBUILT)
 
 include $(LOCAL_PATH)/tools/Android.mk
 
