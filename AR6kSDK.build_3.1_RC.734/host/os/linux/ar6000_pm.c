@@ -35,6 +35,7 @@
 #include <linux/platform_device.h>
 #endif
 #include "wlan_config.h"
+#include <linux/hardirq.h>
 
 #ifdef CONFIG_HAS_WAKELOCK
 #include <linux/wakelock.h>
