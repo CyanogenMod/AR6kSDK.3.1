@@ -136,7 +136,7 @@ $(ATH_ANDROID_SRC_BASE)/host/$(mod_file) : $(mod_cleanup) $(TARGET_PREBUILT_KERN
 #LOCAL_SRC_FILES := $(mod_file)
 
 TARGET_KERNEL_MODULES := $(mod_file)
-include $(BUILD_PREBUILT)
+#include $(BUILD_PREBUILT)
 
 include $(LOCAL_PATH)/tools/Android.mk
 
