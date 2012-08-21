@@ -137,9 +137,7 @@ unsigned int mbox_yield_limit = 99;
 unsigned int enablerssicompensation = 0;
 int reduce_credit_dribble = 1 + HTC_CONNECT_FLAGS_THRESHOLD_LEVEL_ONE_HALF;
 int allow_trace_signal = 0;
-#ifdef CONFIG_HOST_TCMD_SUPPORT
 unsigned int testmode =0;
-#endif
 unsigned int firmware_bridge = 0;
 
 unsigned int irqprocmode = HIF_DEVICE_IRQ_SYNC_ONLY;//HIF_DEVICE_IRQ_ASYNC_SYNC;
