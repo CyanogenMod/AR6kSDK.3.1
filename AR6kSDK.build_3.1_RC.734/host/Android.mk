@@ -129,11 +129,13 @@ $(ATH_ANDROID_SRC_BASE)/host/$(mood_file) : $(mod_cleanup) $(TARGET_PREBUILT_KER
 	$(ATH_CROSS_COMPILE_TYPE)strip -g -S -d $(ATH_ANDROID_SRC_BASE)/host/$(mood_file)
 	$(ACP) -fpt $(ATH_ANDROID_SRC_BASE)/host/$(mood_file) $(TARGET_OUT)/wifi
 
-LOCAL_MODULE := ar6000.ko
-LOCAL_MODULE_TAGS := debug eng optional
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT)/wifi
-LOCAL_SRC_FILES := $(mood_file)
+#LOCAL_MODULE := ar6000.ko
+#LOCAL_MODULE_TAGS := debug eng optional
+#LOCAL_MODULE_CLASS := ETC
+#LOCAL_MODULE_PATH := $(TARGET_OUT)/wifi
+#LOCAL_SRC_FILES := $(mood_file)
+
+TARGET_KERNEL_MODULES := $(mod_file)
 include $(BUILD_PREBUILT)
 
 include $(LOCAL_PATH)/tools/Android.mk
