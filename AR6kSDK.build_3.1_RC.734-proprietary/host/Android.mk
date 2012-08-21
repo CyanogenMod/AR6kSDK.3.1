@@ -95,5 +95,4 @@ $(call add-ar6k-prebuilt-file,$(ar6k_hw20_src_dir)/athtcmd_ram.bin,$(ar6k_hw20_d
 ar6k_hw21_src_dir :=
 ar6k_hw21_dst_dir :=
 
-include $(LOCAL_PATH)/tools/Android.mk
 endif
