@@ -84,7 +84,7 @@ endif
 export  ATH_ARCH_CPU_TYPE=arm
 export  ATH_BUS_SUBTYPE=linux_sdio
 export  ATH_ANDROID_ENV=yes
-export  ATH_SOFTMAC_FILE_USED=yes
+export  ATH_SOFTMAC_FILE_USED=no
 export  ATH_CFG80211_ENV=no
 export  ATH_DEBUG_DRIVER=yes
 export  ATH_HTC_RAW_INT_ENV=yes
