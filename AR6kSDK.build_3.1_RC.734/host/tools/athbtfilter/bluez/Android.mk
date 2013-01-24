@@ -27,6 +27,8 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
+ifeq ($(PLATFORM_VERSION),4.2.*)
+
 ifeq ($(BT_ALT_STACK),true)
 # Define AR6K_PREBUILT_HCIUTILS_LIB:= true if you want to force to enable HCIUTILS
 # Otherwise, we will try to load the hciutil.so dynamically to determinate whether we use hciutils or hci socket
@@ -98,3 +100,5 @@ LOCAL_MODULE_TAGS := debug eng optional
 #LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
 
 include $(BUILD_EXECUTABLE)
+
+endif
